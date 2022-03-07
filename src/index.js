@@ -19,7 +19,20 @@ Similarly, the response object represents the HTTP response that the express app
 // builtin middleware
 const path = require('path');   // importing path module for absolute path
 const staticPath = path.join(__dirname,'../public');    // getting static folder absolute path
+
+// to set the view engine
+
+app.set('view engine','hbs');
+
 app.use(express.static(staticPath));
+
+// template engine route
+
+app.get('/',(req,res) => {
+    res.render('index',{
+        name: 'Rabi Kr Yadav',
+    });
+})
 
 const port = 8000;
 
@@ -34,3 +47,25 @@ app.get('/about', (req, res) => {
 app.listen(port, () => {
     console.log(`listing the port at ${port}`);
 });
+
+/*
+
+Template Engines
+
+A template engine enables you to use static template files in your application. At runtime,
+
+The template engine replace variables in a template file with actual values and transforms the template into an HTML file sent to the client.
+
+it mean we can use dynamic data in express.
+
+Some popular template engines that work with express are.
+Pug, Mustache, EJS, hbs, Dust and more.
+
+The express application generator use 'Jade' as its default.
+
+1) npm install hbs
+2) mkdir views
+3) touch index.hbs
+
+*/
+

@@ -1,3 +1,33 @@
-h1{
-    color: green;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: darkslateblue;
+}
+
+nav ul {
+  list-style: none;
+  font-size: 30px;
+  font-weight: 800;
+  color: aliceblue;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  z-index: 99;
+  position: relative;
+}
+
+nav ul li {
+  padding: 0 2rem;
+}
+
+main {
+  clear: both;
+  min-height: 50vh;
+}
+
+footer {
+  min-height: 200px;
+  background-color: chocolate;
 }

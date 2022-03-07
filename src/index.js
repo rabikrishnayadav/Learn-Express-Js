@@ -21,14 +21,16 @@ const path = require('path');   // importing path module for absolute path
 const staticPath = path.join(__dirname,'../public');    // getting static folder absolute path
 app.use(express.static(staticPath));
 
+const port = 8000;
+
 app.get('/', (req, res) => {
-    res.send('hello from the express');
+    res.send('hello from the express server');
 });
 
 app.get('/about', (req, res) => {
     res.send('hello from the express in about page');
 });
 
-app.listen(8000, () => {
-    console.log('listing the port at 8000');
+app.listen(port, () => {
+    console.log(`listing the port at ${port}`);
 });

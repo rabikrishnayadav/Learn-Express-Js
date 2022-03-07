@@ -16,6 +16,11 @@ has properties for the request query string, paramenters, body, HTTP headers, ec
 Similarly, the response object represents the HTTP response that the express app sends when it receives an HTTP request
 */
 
+// builtin middleware
+const path = require('path');   // importing path module for absolute path
+const staticPath = path.join(__dirname,'../public');    // getting static folder absolute path
+app.use(express.static(staticPath));
+
 app.get('/', (req, res) => {
     res.send('hello from the express');
 });
